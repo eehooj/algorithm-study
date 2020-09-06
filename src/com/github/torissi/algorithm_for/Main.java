@@ -1,4 +1,4 @@
-package com.github.torissi;
+package com.github.torissi.algorithm_for;
 
 import java.util.Scanner;
 
