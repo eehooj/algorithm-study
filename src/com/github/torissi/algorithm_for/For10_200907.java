@@ -3,7 +3,7 @@ package com.github.torissi.algorithm_for;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class For10_200907 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

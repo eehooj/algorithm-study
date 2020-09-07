@@ -1,25 +1,22 @@
 package com.github.torissi.algorithm_for;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
-public class Main {
+public class For9_200907 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int a = Integer.parseInt(br.readLine());
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int a = Integer.parseInt(st.nextToken());
-        int key = Integer.parseInt(st.nextToken());
-
-        StringTokenizer num = new StringTokenizer(br.readLine());
-        for (int i=0; i<a; i++) {
-            int b = Integer.parseInt(num.nextToken());
-
-            if (b < key) {
-                bw.write(b + " ");
+        for (int i=1; i<=a; i++) {
+            for (int j=0; j<a-i; j++) {
+                bw.write(" ");
             }
+            for (int k=0; k<i; k++) {
+                bw.write("*");
+            }
+            bw.write("\n");
         }
         bw.flush();
         bw.close();
@@ -29,4 +26,4 @@ public class Main {
 //Java를 사용하고 있다면, Scanner와 System.out.println 대신 BufferedReader와 BufferedWriter를 사용할 수 있다.
 // BufferedWriter.flush는 맨 마지막에 한 번만 하면 된다.
 
-//https://www.acmicpc.net/problem/10871
+//https://www.acmicpc.net/problem/2439
