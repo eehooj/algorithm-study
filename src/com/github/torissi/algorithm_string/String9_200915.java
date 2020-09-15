@@ -4,11 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class String9_200915 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        String[] cro = {
+                "c=", "c-", "dz=", "d-",
+                "lj", "nj", "s=", "z="
+        };
 
+        for (String value : cro) {
+            if (s.contains(value)) {
+                s = s.replace(value, " ");
+            }
+        }
+
+        System.out.println(s.length());
     }
 }
 
@@ -18,4 +30,4 @@ public class Main {
 // 문제에서 입력이 한 줄로 나온다면 진짜 한 줄 입력을 해서 할 수 있도록 해야함
 //나는 처음에 기존에 하던 방식 처럼 한 줄로 받아서 StringTokenizer로 띄어쓰기 기준으로 잘라서 써서 런타임 에러가 났음
 
-//https://www.acmicpc.net/problem/5622
+//https://www.acmicpc.net/problem/2941
