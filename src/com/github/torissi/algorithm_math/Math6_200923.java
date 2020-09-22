@@ -3,7 +3,7 @@ package com.github.torissi.algorithm_math;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Math6_200923 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
