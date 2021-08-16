@@ -4,10 +4,9 @@ public class Solution210816_1 {
     public long[] solution(int x, int n) {
         long[] answer = new long[n];
         answer[0] = x;
-        long temp = x;
+
         for (int i = 1; i< n; i++) {
-            temp = temp + x;
-            answer[i] = temp;
+            answer[i] = answer[i - 1] + x;
         }
 
         return answer;
