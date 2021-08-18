@@ -3,19 +3,9 @@ package com.github.torissi.programmers;
 public class Solution210818_2 {
     public int[] solution(int n, int m) {
         int[] answer = new int[2];
-        int big;
-        int small;
 
-        if (n > m) {
-            big = n;
-            small = m;
-        } else {
-            big = m;
-            small = n;
-        }
-
-        answer[0] = gcd(big, small);
-        answer[1] = (big * small) / answer[0];
+        answer[0] = gcd(n, m);
+        answer[1] = (n * m) / answer[0];
 
         return answer;
     }
@@ -50,20 +40,22 @@ n	m	return
 */
 
 /*
-테스트 1 〉	통과 (0.03ms, 68.4MB)
-테스트 2 〉	통과 (0.02ms, 72.8MB)
-테스트 3 〉	통과 (0.03ms, 61.5MB)
-테스트 4 〉	통과 (0.03ms, 73.7MB)
-테스트 5 〉	통과 (0.03ms, 75.9MB)
-테스트 6 〉	통과 (0.02ms, 71.1MB)
-테스트 7 〉	통과 (0.01ms, 69.1MB)
-테스트 8 〉	통과 (0.02ms, 70.7MB)
-테스트 9 〉	통과 (0.03ms, 69.8MB)
-테스트 10 〉	통과 (0.02ms, 69.5MB)
-테스트 11 〉	통과 (0.02ms, 76.1MB)
-테스트 12 〉	통과 (0.02ms, 69.8MB)
-테스트 13 〉	통과 (0.03ms, 72MB)
-테스트 14 〉	통과 (0.01ms, 68.4MB)
-테스트 15 〉	통과 (0.02ms, 61.1MB)
-테스트 16 〉	통과 (0.02ms, 70.8MB)*/
+테스트 1 〉	통과 (0.02ms, 60.2MB)
+테스트 2 〉	통과 (0.02ms, 68.5MB)
+테스트 3 〉	통과 (0.01ms, 73.2MB)
+테스트 4 〉	통과 (0.02ms, 72.3MB)
+테스트 5 〉	통과 (0.02ms, 61.5MB)
+테스트 6 〉	통과 (0.01ms, 72.4MB)
+테스트 7 〉	통과 (0.01ms, 69.7MB)
+테스트 8 〉	통과 (0.02ms, 68.5MB)
+테스트 9 〉	통과 (0.02ms, 60.4MB)
+테스트 10 〉	통과 (0.02ms, 61.4MB)
+테스트 11 〉	통과 (0.01ms, 68.9MB)
+테스트 12 〉	통과 (0.02ms, 72.8MB)
+테스트 13 〉	통과 (0.03ms, 59.8MB)
+테스트 14 〉	통과 (0.02ms, 71.7MB)
+테스트 15 〉	통과 (0.01ms, 71.9MB)
+테스트 16 〉	통과 (0.01ms, 59.1MB)
+=> 굳이 인풋 값의 대소를 구분할 필요가 없음
+*/
 
