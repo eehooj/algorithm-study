@@ -2,32 +2,22 @@ package com.github.torissi.programmers;
 
 public class Solution210819_5 {
     public String solution(String s) {
-        String[] str = s.split(" ");
+        String[] str = s.split("");
         StringBuilder builder = new StringBuilder();
+        int count = 0;
 
         for (String value : str) {
-            String[] temp = value.split("");
+            count = value.contains(" ") ? 0 : count + 1;
 
-            if (!value.isEmpty()) {
-                for (int j = 0; j < temp.length; j++) {
-                    if (j % 2 == 0) {
-                        builder.append(temp[j].toUpperCase());
-                    } else {
-                        builder.append(temp[j].toLowerCase());
-                    }
-                }
+            if (count % 2 == 0) {
+                builder.append(value.toLowerCase());
+            } else {
+                builder.append(value.toUpperCase());
             }
-            builder.append(" ");
+
         }
 
-        if (s.length() > builder.length()) {
-            int i1 = s.length() - builder.length();
-            for (int i = 0; i < i1; i++) {
-                builder.append(" ");
-            }
-        }
-
-        return builder.substring(0, s.length());
+        return builder.toString();
     }
 }
 
@@ -46,22 +36,26 @@ s	return
 */
 
 /*
-테스트 1 〉	통과 (0.38ms, 55.7MB)
-테스트 2 〉	통과 (0.19ms, 57MB)
-테스트 3 〉	통과 (0.35ms, 59.1MB)
-테스트 4 〉	통과 (10.30ms, 56.7MB)
-테스트 5 〉	통과 (0.67ms, 55.9MB)
-테스트 6 〉	통과 (0.19ms, 57.5MB)
-테스트 7 〉	통과 (0.30ms, 57.5MB)
-테스트 8 〉	통과 (1.38ms, 57MB)
-테스트 9 〉	통과 (0.52ms, 68.7MB)
-테스트 10 〉	통과 (1.54ms, 56.2MB)
-테스트 11 〉	통과 (1.13ms, 73.3MB)
-테스트 12 〉	통과 (2.37ms, 57.4MB)
-테스트 13 〉	통과 (0.50ms, 57.1MB)
-테스트 14 〉	통과 (0.27ms, 64.1MB)
-테스트 15 〉	통과 (0.50ms, 56.6MB)
-테스트 16 〉	통과 (1.81ms, 57.8MB)
+테스트 1 〉	통과 (0.22ms, 56.7MB)
+테스트 2 〉	통과 (0.12ms, 57.7MB)
+테스트 3 〉	통과 (0.23ms, 57.3MB)
+테스트 4 〉	통과 (0.84ms, 68.3MB)
+테스트 5 〉	통과 (0.32ms, 59MB)
+테스트 6 〉	통과 (0.13ms, 71.9MB)
+테스트 7 〉	통과 (0.16ms, 56.3MB)
+테스트 8 〉	통과 (0.55ms, 57MB)
+테스트 9 〉	통과 (0.38ms, 57.3MB)
+테스트 10 〉	통과 (0.93ms, 70.2MB)
+테스트 11 〉	통과 (0.87ms, 70.7MB)
+테스트 12 〉	통과 (1.72ms, 58.6MB)
+테스트 13 〉	통과 (0.34ms, 67.5MB)
+테스트 14 〉	통과 (0.23ms, 56.8MB)
+테스트 15 〉	통과 (0.26ms, 68.4MB)
+테스트 16 〉	통과 (0.63ms, 57MB)
+=> 처음에 문제를 잘 못 이해해서 엄청 헤맴. 띄어쓰기는 없애는 줄 알았는데 띄어쓰기까지 품어야 했음
+=> 때문에 처음 split을 " "가 아닌 ""로 하여 모든 것을 배열에 담아야 했음
 */
+
+
 
 
