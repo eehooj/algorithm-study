@@ -10,11 +10,6 @@ public class Solution210819_1 {
             }
         }
 
-        long sqrt = (long) Math.sqrt(n);
-        if (Math.pow(sqrt, 2) == n) {
-            return (long) Math.pow(sqrt, 2);
-        }
-
         return answer;
     }
 }
