@@ -2,21 +2,7 @@ package com.github.torissi.programmers;
 
 public class Solution210821_2 {
     public boolean solution(String s) {
-        char[] ch = s.toCharArray();
-        boolean answer = true;
-
-        if (ch.length == 4 || ch.length == 6) {
-            for (char a : ch) {
-                if ((int) a > 57 || (int) a < 48) {
-                    answer = false;
-                    break;
-                }
-            }
-        } else {
-            answer = false;
-        }
-
-        return answer;
+        return (s.length() == 4 || s.length() == 6) && s.matches("^[0-9]*$");
     }
 }
 
@@ -33,20 +19,21 @@ s	return
 */
 
 /*
-테스트 1 〉	통과 (0.02ms, 69.7MB)
-테스트 2 〉	통과 (0.02ms, 72.9MB)
-테스트 3 〉	통과 (0.02ms, 73.2MB)
-테스트 4 〉	통과 (0.04ms, 70.4MB)
-테스트 5 〉	통과 (0.01ms, 67.8MB)
-테스트 6 〉	통과 (0.03ms, 58.9MB)
-테스트 7 〉	통과 (0.03ms, 70.7MB)
-테스트 8 〉	통과 (0.02ms, 70.6MB)
-테스트 9 〉	통과 (0.02ms, 60.1MB)
-테스트 10 〉	통과 (0.02ms, 56.9MB)
-테스트 11 〉	통과 (0.02ms, 60.6MB)
-테스트 12 〉	통과 (0.02ms, 60.4MB)
-테스트 13 〉	통과 (0.02ms, 69.4MB)
-테스트 14 〉	통과 (0.02ms, 70.3MB)
-테스트 15 〉	통과 (0.04ms, 71.4MB)
-테스트 16 〉	통과 (0.02ms, 60.4MB)
+테스트 1 〉	통과 (0.10ms, 70.4MB)
+테스트 2 〉	통과 (0.01ms, 57.9MB)
+테스트 3 〉	통과 (0.07ms, 59MB)
+테스트 4 〉	통과 (0.07ms, 72.2MB)
+테스트 5 〉	통과 (0.02ms, 61.5MB)
+테스트 6 〉	통과 (0.02ms, 57.7MB)
+테스트 7 〉	통과 (0.02ms, 71.7MB)
+테스트 8 〉	통과 (0.08ms, 57.7MB)
+테스트 9 〉	통과 (0.09ms, 62MB)
+테스트 10 〉	통과 (0.07ms, 58.3MB)
+테스트 11 〉	통과 (0.06ms, 59.1MB)
+테스트 12 〉	통과 (0.02ms, 68.5MB)
+테스트 13 〉	통과 (0.01ms, 66.8MB)
+테스트 14 〉	통과 (0.07ms, 66.3MB)
+테스트 15 〉	통과 (0.09ms, 69MB)
+테스트 16 〉	통과 (0.08ms, 73.3MB)
+=> 시간은 좀더 걸리나, 정규식으로 해봄..! 정규식도 공부해야지..!
 * */
