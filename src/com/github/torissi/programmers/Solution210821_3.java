@@ -4,16 +4,11 @@ import java.util.Arrays;
 
 public class Solution210821_3 {
     public String solution(String s) {
-        StringBuilder answer = new StringBuilder();
         char[] cha = s.toCharArray();
         Arrays.sort(cha);
-
-        for (int i = s.length() - 1; i >= 0; i--) {
-            answer.append(cha[i]);
-        }
-
-        return answer.toString();
+        return new StringBuilder(new String(cha)).reverse().toString();
     }
+
 }
 
 /*문자열 내림차순으로 배치하기
@@ -29,20 +24,21 @@ s	return
 */
 
 /*
-테스트 1 〉	통과 (0.32ms, 72.1MB)
-테스트 2 〉	통과 (0.32ms, 69.3MB)
-테스트 3 〉	통과 (0.36ms, 61.1MB)
-테스트 4 〉	통과 (0.34ms, 58.9MB)
-테스트 5 〉	통과 (0.46ms, 69.6MB)
-테스트 6 〉	통과 (0.40ms, 67.8MB)
-테스트 7 〉	통과 (0.33ms, 57.6MB)
-테스트 8 〉	통과 (0.35ms, 61.2MB)
-테스트 9 〉	통과 (0.34ms, 68.5MB)
-테스트 10 〉	통과 (0.37ms, 71MB)
-테스트 11 〉	통과 (0.33ms, 58.7MB)
-테스트 12 〉	통과 (0.45ms, 63.2MB)
-테스트 13 〉	통과 (0.36ms, 58.9MB)
-테스트 14 〉	통과 (0.35ms, 59.1MB)
-테스트 15 〉	통과 (0.32ms, 59.4MB)
-테스트 16 〉	통과 (0.32ms, 72.8MB)
+테스트 1 〉	통과 (0.38ms, 67.6MB)
+테스트 2 〉	통과 (0.36ms, 71.2MB)
+테스트 3 〉	통과 (0.36ms, 73.8MB)
+테스트 4 〉	통과 (0.36ms, 58.8MB)
+테스트 5 〉	통과 (0.48ms, 68.2MB)
+테스트 6 〉	통과 (0.43ms, 71.9MB)
+테스트 7 〉	통과 (0.38ms, 57.8MB)
+테스트 8 〉	통과 (0.35ms, 69.2MB)
+테스트 9 〉	통과 (0.52ms, 72.9MB)
+테스트 10 〉	통과 (0.48ms, 76.8MB)
+테스트 11 〉	통과 (0.35ms, 58.3MB)
+테스트 12 〉	통과 (0.32ms, 66.2MB)
+테스트 13 〉	통과 (0.37ms, 72MB)
+테스트 14 〉	통과 (0.36ms, 72.9MB)
+테스트 15 〉	통과 (0.35ms, 59.9MB)
+테스트 16 〉	통과 (0.34ms, 69.5MB)
+=> StringBuilder에 reverse() 함수가 있어서 편리하게 할 수 있군.. 걸리는 시간은 비슷함
 * */
