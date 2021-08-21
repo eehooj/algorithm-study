@@ -8,7 +8,7 @@ public class Solution210821_1 {
         for (int i = 0; i < length; i++) {
             if (seoul[i].equals("Kim")) {
                 num = i;
-                continue;
+                break;
             }
         }
 
