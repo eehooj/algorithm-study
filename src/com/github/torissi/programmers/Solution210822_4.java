@@ -69,3 +69,42 @@ arr	answer
 테스트 3 〉	통과 (30.00ms, 125MB)
 테스트 4 〉	통과 (28.11ms, 127MB)
 */
+
+/*
+List<Integer> list = new ArrayList<>(1_000_000);
+
+Arrays.stream(arr).reduce(arr[0]^1, (before, now) -> {
+    if(before != now) { list.add(now); }
+    return now;
+});
+
+return Arrays.stream( list.toArray( new Integer[0] ) )
+        .mapToInt(Integer::intValue)
+        .toArray();
+* */
+
+/*
+정확성  테스트
+테스트 1 〉	통과 (5.89ms, 77.3MB)
+테스트 2 〉	통과 (5.12ms, 78.8MB)
+테스트 3 〉	통과 (4.45ms, 62.8MB)
+테스트 4 〉	통과 (4.68ms, 63MB)
+테스트 5 〉	통과 (4.90ms, 76.1MB)
+테스트 6 〉	통과 (4.71ms, 71.7MB)
+테스트 7 〉	통과 (4.80ms, 66.3MB)
+테스트 8 〉	통과 (4.88ms, 73.8MB)
+테스트 9 〉	통과 (4.78ms, 62.5MB)
+테스트 10 〉	통과 (4.61ms, 62.3MB)
+테스트 11 〉	통과 (4.57ms, 74.5MB)
+테스트 12 〉	통과 (4.68ms, 78.5MB)
+테스트 13 〉	통과 (4.67ms, 62.8MB)
+테스트 14 〉	통과 (4.90ms, 78.6MB)
+테스트 15 〉	통과 (4.76ms, 77.4MB)
+테스트 16 〉	통과 (4.83ms, 74.7MB)
+테스트 17 〉	통과 (4.42ms, 74.8MB)
+효율성  테스트
+테스트 1 〉	통과 (40.76ms, 128MB)
+테스트 2 〉	통과 (42.01ms, 127MB)
+테스트 3 〉	통과 (43.76ms, 127MB)
+테스트 4 〉	통과 (41.96ms, 127MB)
+* */
