@@ -1,34 +1,21 @@
 package com.github.torissi.programmers;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Solution210822_1 {
     public String[] solution(String[] strings, int n) {
-        int length = strings.length;
-        Map<Integer, String> str = new HashMap<>();
-        String[] answer = new String[length];
+        Arrays.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if(o1.charAt(n) > o2.charAt(n)) return 1;
+                else if (o1.charAt(n) < o2.charAt(n)) return -1;
+                else if (o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2); // 같으면 전체 값 비교
+                return 0;
+            }
+        });
 
-        Arrays.sort(strings);
-
-        for (int i = 0; i < length; i++) {
-            str.put(i, strings[i].substring(n, n + 1));
-        }
-
-        List<Map.Entry<Integer, String>> entries
-                = str
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue())
-                .collect(Collectors.toList());
-
-        int index = 0;
-        for (Map.Entry<Integer, String> a : entries) {
-            answer[index] = strings[a.getKey()];
-            index++;
-        }
-
-        return answer;
+        return strings;
     }
 }
 
@@ -55,16 +42,18 @@ strings	n	return
 */
 
 /*
-테스트 1 〉	통과 (2.59ms, 59.6MB)
-테스트 2 〉	통과 (2.36ms, 61MB)
-테스트 3 〉	통과 (2.46ms, 72.8MB)
-테스트 4 〉	통과 (2.35ms, 70.6MB)
-테스트 5 〉	통과 (2.53ms, 58.8MB)
-테스트 6 〉	통과 (2.57ms, 60.7MB)
-테스트 7 〉	통과 (2.59ms, 60.8MB)
-테스트 8 〉	통과 (2.78ms, 69.3MB)
-테스트 9 〉	통과 (2.45ms, 61.8MB)
-테스트 10 〉	통과 (3.08ms, 72MB)
-테스트 11 〉	통과 (2.68ms, 61.5MB)
-테스트 12 〉	통과 (2.90ms, 61.8MB)
+
+테스트 1 〉	통과 (0.33ms, 60.1MB)
+테스트 2 〉	통과 (0.33ms, 72.8MB)
+테스트 3 〉	통과 (0.34ms, 60.5MB)
+테스트 4 〉	통과 (0.43ms, 74MB)
+테스트 5 〉	통과 (0.31ms, 57.6MB)
+테스트 6 〉	통과 (0.39ms, 73MB)
+테스트 7 〉	통과 (0.49ms, 70.1MB)
+테스트 8 〉	통과 (0.31ms, 60.4MB)
+테스트 9 〉	통과 (0.32ms, 60.5MB)
+테스트 10 〉	통과 (0.39ms, 57.9MB)
+테스트 11 〉	통과 (0.39ms, 61.9MB)
+테스트 12 〉	통과 (0.40ms, 68.5MB)
+=> compare 함수를 오버라이딩 하면 깔끔하네..... 신기하다..
 */
