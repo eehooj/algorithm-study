@@ -5,23 +5,11 @@ import java.util.Comparator;
 
 public class Solution210822_2 {
     public long solution(int a, int b) {
-        long answer = 0;
-        int big = 0;
-        int small = 0;
+        return arithmetic(Math.min(a, b), Math.max(a,b));
+    }
 
-        if (a >= b) {
-            big = a;
-            small = b;
-        } else {
-            small = a;
-            big = b;
-        }
-
-        for (int i = small; i <= big; i++ ) {
-            answer += i;
-        }
-
-        return answer;
+    private long arithmetic(int min, int max) {
+        return (long) (max - min + 1) * (max + min) / 2;
     }
 }
 
@@ -42,20 +30,21 @@ a	b	return
 */
 
 /*
-테스트 1 〉	통과 (0.02ms, 61.2MB)
-테스트 2 〉	통과 (0.01ms, 59MB)
-테스트 3 〉	통과 (0.01ms, 68.7MB)
-테스트 4 〉	통과 (10.91ms, 60.5MB)
-테스트 5 〉	통과 (8.07ms, 71.7MB)
-테스트 6 〉	통과 (7.15ms, 61.6MB)
-테스트 7 〉	통과 (4.26ms, 58.4MB)
-테스트 8 〉	통과 (6.30ms, 57.8MB)
-테스트 9 〉	통과 (5.23ms, 72.7MB)
-테스트 10 〉	통과 (2.30ms, 72.7MB)
-테스트 11 〉	통과 (0.08ms, 73MB)
-테스트 12 〉	통과 (0.18ms, 58.7MB)
-테스트 13 〉	통과 (0.09ms, 72.5MB)
-테스트 14 〉	통과 (0.02ms, 70.3MB)
-테스트 15 〉	통과 (0.02ms, 72.8MB)
-테스트 16 〉	통과 (0.07ms, 73MB)
+테스트 1 〉	통과 (0.02ms, 72.7MB)
+테스트 2 〉	통과 (0.09ms, 71.2MB)
+테스트 3 〉	통과 (0.07ms, 73.7MB)
+테스트 4 〉	통과 (0.03ms, 74.3MB)
+테스트 5 〉	통과 (0.11ms, 70.1MB)
+테스트 6 〉	통과 (0.03ms, 68.3MB)
+테스트 7 〉	통과 (0.03ms, 60.5MB)
+테스트 8 〉	통과 (0.03ms, 72.3MB)
+테스트 9 〉	통과 (0.03ms, 71.7MB)
+테스트 10 〉	통과 (0.09ms, 57.9MB)
+테스트 11 〉	통과 (0.03ms, 70.7MB)
+테스트 12 〉	통과 (0.04ms, 69.3MB)
+테스트 13 〉	통과 (0.03ms, 57.7MB)
+테스트 14 〉	통과 (0.03ms, 72.1MB)
+테스트 15 〉	통과 (0.03ms, 72.1MB)
+테스트 16 〉	통과 (0.04ms, 70.5MB)
+=> 등차 수열.....
 */
