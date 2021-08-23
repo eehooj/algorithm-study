@@ -2,19 +2,7 @@ package com.github.torissi.programmers;
 
 public class Solution210823_1 {
     public String solution(String s) {
-        StringBuilder builder = new StringBuilder();
-        char[] cha = s.toCharArray();
-        int length = cha.length;
-        int center = length / 2;
-
-        if (length % 2 == 0) {
-            builder.append(cha[center - 1]);
-            builder.append(cha[center]);
-        } else {
-            builder.append(cha[center]);
-        }
-
-        return builder.toString();
+        return s.substring((s.length()-1) / 2, s.length()/2 + 1);
     }
 }
 
@@ -31,20 +19,20 @@ s	return
 */
 
 /*
-테스트 1 〉	통과 (0.03ms, 58.4MB)
-테스트 2 〉	통과 (0.04ms, 60.6MB)
-테스트 3 〉	통과 (0.03ms, 60.6MB)
-테스트 4 〉	통과 (0.03ms, 69.4MB)
-테스트 5 〉	통과 (0.03ms, 74.1MB)
-테스트 6 〉	통과 (0.03ms, 67.5MB)
-테스트 7 〉	통과 (0.03ms, 71.5MB)
-테스트 8 〉	통과 (0.03ms, 71.8MB)
-테스트 9 〉	통과 (0.05ms, 68.9MB)
-테스트 10 〉	통과 (0.04ms, 71.1MB)
-테스트 11 〉	통과 (0.03ms, 58.1MB)
-테스트 12 〉	통과 (0.05ms, 74.6MB)
-테스트 13 〉	통과 (0.03ms, 59.7MB)
-테스트 14 〉	통과 (0.04ms, 70.4MB)
-테스트 15 〉	통과 (0.03ms, 59.2MB)
-테스트 16 〉	통과 (0.03ms, 71.1MB)
+테스트 1 〉	통과 (0.02ms, 58.2MB)
+테스트 2 〉	통과 (0.01ms, 70.8MB)
+테스트 3 〉	통과 (0.02ms, 72.2MB)
+테스트 4 〉	통과 (0.02ms, 59.6MB)
+테스트 5 〉	통과 (0.02ms, 69.9MB)
+테스트 6 〉	통과 (0.02ms, 60.6MB)
+테스트 7 〉	통과 (0.03ms, 58.9MB)
+테스트 8 〉	통과 (0.02ms, 59.3MB)
+테스트 9 〉	통과 (0.01ms, 72.2MB)
+테스트 10 〉	통과 (0.02ms, 58.5MB)
+테스트 11 〉	통과 (0.02ms, 71.6MB)
+테스트 12 〉	통과 (0.02ms, 73.8MB)
+테스트 13 〉	통과 (0.02ms, 70.7MB)
+테스트 14 〉	통과 (0.02ms, 58.9MB)
+테스트 15 〉	통과 (0.01ms, 58.6MB)
+테스트 16 〉	통과 (0.02ms, 60.9MB)
 */
