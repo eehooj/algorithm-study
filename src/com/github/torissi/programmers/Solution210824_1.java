@@ -24,8 +24,7 @@ public class Solution210824_1 {
             }
         }
 
-        int temp = Math.max(correct[0], correct[1]);
-        int max = Math.max(correct[2], temp);
+        int max = Math.max(correct[0], Math.max(correct[1], correct[2]));
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 3; i++) {
             if (max == correct[i]) {
@@ -75,18 +74,18 @@ answers	return
 */
 
 /*
-테스트 1 〉	통과 (0.13ms, 59.4MB)
-테스트 2 〉	통과 (0.12ms, 57.1MB)
-테스트 3 〉	통과 (0.19ms, 59.5MB)
-테스트 4 〉	통과 (0.14ms, 58.2MB)
-테스트 5 〉	통과 (0.14ms, 73.6MB)
-테스트 6 〉	통과 (0.12ms, 59.6MB)
-테스트 7 〉	통과 (0.40ms, 73MB)
-테스트 8 〉	통과 (0.34ms, 59.8MB)
-테스트 9 〉	통과 (1.01ms, 69.7MB)
-테스트 10 〉	통과 (0.35ms, 61.6MB)
-테스트 11 〉	통과 (0.97ms, 73MB)
-테스트 12 〉	통과 (0.57ms, 72.2MB)
-테스트 13 〉	통과 (0.24ms, 71MB)
-테스트 14 〉	통과 (0.61ms, 68.6MB)
+테스트 1 〉	통과 (0.19ms, 60.2MB)
+테스트 2 〉	통과 (0.13ms, 71.8MB)
+테스트 3 〉	통과 (0.13ms, 60.8MB)
+테스트 4 〉	통과 (0.15ms, 60.4MB)
+테스트 5 〉	통과 (0.14ms, 69.3MB)
+테스트 6 〉	통과 (0.14ms, 71.4MB)
+테스트 7 〉	통과 (0.59ms, 68.8MB)
+테스트 8 〉	통과 (0.21ms, 75.1MB)
+테스트 9 〉	통과 (0.61ms, 71MB)
+테스트 10 〉	통과 (0.39ms, 60MB)
+테스트 11 〉	통과 (1.01ms, 70.9MB)
+테스트 12 〉	통과 (0.57ms, 59.3MB)
+테스트 13 〉	통과 (0.18ms, 60.2MB)
+테스트 14 〉	통과 (0.67ms, 68.8MB)
 */
