@@ -1,33 +1,31 @@
 package com.github.torissi.programmers;
 
-import java.util.Arrays;
 
 public class Solution210823_3 {
-    public static int solution(int n, int[] lost, int[] reserve) {
-        int length = lost.length;
-        int rlength = reserve.length;
-        int answer = n - lost.length;
+    public int solution(int n, int[] lost, int[] reserve) {
+        int answer = n;
+        int[] student = new int[n + 2];
 
-        Arrays.sort(lost);
-        Arrays.sort(reserve);
-
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < rlength; j++) {
-                if (lost[i] == reserve[j]) {
-                    answer++;
-                    reserve[j] = -1;
-                    lost[i] = -1;
-                    break;
-                }
-            }
+        for (int a : lost) {
+            student[a]--;
         }
 
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < rlength; j++) {
-                if (reserve[j] - 1 == lost[i] || reserve[j] + 1 == lost[i]) {
-                    answer++;
-                    reserve[j] = -1;
+        for (int a : reserve) {
+            student[a]++;
+        }
+
+        for (int i = 1; i < student.length - 1; i++) {
+            if (student[i] == -1) {
+                if (student[i - 1] == 1) {
+                    student[i]++;
+                    student[i - 1]--;
                     break;
+                } else if (student[i + 1] == 1) {
+                    student[i]++;
+                    student[i + 1]--;
+                    break;
+                } else {
+                    answer--;
                 }
             }
         }
@@ -35,11 +33,6 @@ public class Solution210823_3 {
         return answer;
     }
 
-    public static void main(String[] args) {
-        int[] lost = {2, 3, 4};
-        int[] reserve = {4, 3, 5};
-        solution(5, lost, reserve);
-    }
 }
 
 /* 체육복
@@ -74,17 +67,18 @@ n	lost	reserve	return
 */
 
 /*
-테스트 1 〉	통과 (0.47ms, 71.6MB)
-테스트 2 〉	통과 (0.41ms, 68.9MB)
-테스트 3 〉	통과 (0.35ms, 61.5MB)
-테스트 4 〉	통과 (0.33ms, 70.9MB)
-테스트 5 〉	통과 (0.37ms, 69.4MB)
-테스트 6 〉	통과 (0.32ms, 59MB)
-테스트 7 〉	통과 (0.49ms, 73.1MB)
-테스트 8 〉	통과 (0.34ms, 57.8MB)
-테스트 9 〉	통과 (0.33ms, 58.5MB)
-테스트 10 〉	통과 (0.34ms, 60.5MB)
-테스트 11 〉	통과 (0.34ms, 71.8MB)
-테스트 12 〉	통과 (0.35ms, 69.8MB)
-테스트 13 〉	통과 (0.32ms, 70MB)
+테스트 1 〉	통과 (0.02ms, 59.7MB)
+테스트 2 〉	통과 (0.02ms, 59.6MB)
+테스트 3 〉	통과 (0.03ms, 58.9MB)
+테스트 4 〉	통과 (0.02ms, 60.4MB)
+테스트 5 〉	통과 (0.02ms, 70.1MB)
+테스트 6 〉	통과 (0.02ms, 60.1MB)
+테스트 7 〉	통과 (0.02ms, 71.7MB)
+테스트 8 〉	통과 (0.01ms, 71.9MB)
+테스트 9 〉	통과 (0.01ms, 71.6MB)
+테스트 10 〉	통과 (0.02ms, 72MB)
+테스트 11 〉	통과 (0.01ms, 69.7MB)
+테스트 12 〉	통과 (0.02ms, 61.3MB)
+테스트 13 〉	통과 (0.02ms, 67.9MB)
+=> 생각의 전환,,!
 */
