@@ -19,11 +19,9 @@ public class Solution210823_3 {
                 if (student[i - 1] == 1) {
                     student[i]++;
                     student[i - 1]--;
-                    break;
                 } else if (student[i + 1] == 1) {
                     student[i]++;
                     student[i + 1]--;
-                    break;
                 } else {
                     answer--;
                 }
