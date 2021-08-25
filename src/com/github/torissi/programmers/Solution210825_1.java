@@ -3,7 +3,7 @@ package com.github.torissi.programmers;
 import java.util.Arrays;
 
 public class Solution210825_1 {
-    public static int[] solution(int[] array, int[][] commands) {
+    public int[] solution(int[] array, int[][] commands) {
         int length = commands.length;
         int[] answer = new int[length];
 
@@ -20,12 +20,6 @@ public class Solution210825_1 {
         }
 
         return answer;
-    }
-
-    public static void main(String[] args) {
-        int[] array = {1, 5, 2, 6, 3, 7, 4};
-        int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
-        solution(array, commands);
     }
 }
 
