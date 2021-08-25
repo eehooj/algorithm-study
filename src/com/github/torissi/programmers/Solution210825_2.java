@@ -1,28 +1,19 @@
 package com.github.torissi.programmers;
 
+import java.util.Arrays;
+
 public class Solution210825_2 {
     public String solution(String[] participant, String[] completion) {
-        int pLength = participant.length;
-        int cLength = completion.length;
-        String answer = null;
+        Arrays.sort(participant);
+        Arrays.sort(completion);
 
-        for (int i = 0; i < pLength; i++) {
-            for (int j = 0; j < cLength; j++) {
-                if (participant[i].equals(completion[j])) {
-                    completion[j] = "";
-                    participant[i] = "";
-                    break;
-                }
+        for (int i = 0; i < completion.length; i++) {
+            if (!participant[i].equals(completion[i])) {
+                return participant[i];
             }
         }
 
-        for (String s : participant) {
-            if (!s.equals("")) {
-                answer = s;
-            }
-        }
-
-        return answer;
+        return participant[participant.length - 1];
     }
 }
 
@@ -55,15 +46,16 @@ participant	completion	return
 
 /*
 정확성  테스트
-테스트 1 〉	통과 (0.02ms, 71.9MB)
-테스트 2 〉	통과 (0.03ms, 59.1MB)
-테스트 3 〉	통과 (4.43ms, 57.9MB)
-테스트 4 〉	통과 (7.95ms, 72.2MB)
-테스트 5 〉	통과 (7.17ms, 59.2MB)
+테스트 1 〉	통과 (0.22ms, 60.3MB)
+테스트 2 〉	통과 (0.25ms, 73.9MB)
+테스트 3 〉	통과 (1.55ms, 72.3MB)
+테스트 4 〉	통과 (2.59ms, 62.6MB)
+테스트 5 〉	통과 (3.05ms, 72.7MB)
 효율성  테스트
-테스트 1 〉	실패 (시간 초과)
-테스트 2 〉	실패 (시간 초과)
-테스트 3 〉	실패 (시간 초과)
-테스트 4 〉	실패 (시간 초과)
-테스트 5 〉	실패 (시간 초과)
+테스트 1 〉	통과 (186.61ms, 82.2MB)
+테스트 2 〉	통과 (206.76ms, 90MB)
+테스트 3 〉	통과 (341.54ms, 94.3MB)
+테스트 4 〉	통과 (338.25ms, 97.2MB)
+테스트 5 〉	통과 (305.78ms, 95.8MB)
+=> 이름이 같으니까 정렬해서 푸는게 제일 깔끔하고 간단하지..
 */
