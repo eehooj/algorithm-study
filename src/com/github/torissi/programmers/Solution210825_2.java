@@ -1,19 +1,30 @@
 package com.github.torissi.programmers;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class Solution210825_2 {
     public String solution(String[] participant, String[] completion) {
-        Arrays.sort(participant);
-        Arrays.sort(completion);
+        String answer = "";
+        HashMap<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < completion.length; i++) {
-            if (!participant[i].equals(completion[i])) {
-                return participant[i];
+        for (String s : participant) {
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
+
+        for (String s : completion) {
+            map.put(s, map.get(s) - 1);
+        }
+
+        for (Map.Entry<String, Integer> e : map.entrySet()) {
+            if (e.getValue() != 0) {
+                answer = e.getKey();
             }
         }
 
-        return participant[participant.length - 1];
+
+        return answer;
     }
 }
 
@@ -46,16 +57,18 @@ participant	completion	return
 
 /*
 정확성  테스트
-테스트 1 〉	통과 (0.22ms, 60.3MB)
-테스트 2 〉	통과 (0.25ms, 73.9MB)
-테스트 3 〉	통과 (1.55ms, 72.3MB)
-테스트 4 〉	통과 (2.59ms, 62.6MB)
-테스트 5 〉	통과 (3.05ms, 72.7MB)
+테스트 1 〉	통과 (0.05ms, 72.1MB)
+테스트 2 〉	통과 (0.10ms, 73.2MB)
+테스트 3 〉	통과 (0.58ms, 73.3MB)
+테스트 4 〉	통과 (0.72ms, 60.4MB)
+테스트 5 〉	통과 (1.49ms, 76.6MB)
 효율성  테스트
-테스트 1 〉	통과 (186.61ms, 82.2MB)
-테스트 2 〉	통과 (206.76ms, 90MB)
-테스트 3 〉	통과 (341.54ms, 94.3MB)
-테스트 4 〉	통과 (338.25ms, 97.2MB)
-테스트 5 〉	통과 (305.78ms, 95.8MB)
-=> 이름이 같으니까 정렬해서 푸는게 제일 깔끔하고 간단하지..
+테스트 1 〉	통과 (36.04ms, 81MB)
+테스트 2 〉	통과 (73.82ms, 89.1MB)
+테스트 3 〉	통과 (92.30ms, 95MB)
+테스트 4 〉	통과 (98.74ms, 95.1MB)
+테스트 5 〉	통과 (85.61ms, 95.3MB)
+=> map으로 푸니까 훨씬 효율성이 좋음
+=> HashMap은 검색에 최고의 성능을 보임
+=> 해시는 배열과 링크드리스트의 조합
 */
