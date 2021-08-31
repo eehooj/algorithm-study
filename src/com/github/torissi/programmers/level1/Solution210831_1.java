@@ -6,16 +6,16 @@ public class Solution210831_1 {
 
         for (int i = 0; i < n; i++) {
             StringBuilder builder = new StringBuilder();
-            String s = Integer.toBinaryString(arr1[i] | arr2[i])
+            String s = String.format("%" + n + "s", Integer.toBinaryString(arr1[i] | arr2[i]))
                     .replaceAll("1", "#")
                     .replaceAll("0", " ");
 
-            int count = n - s.length();
+            /*int count = n - s.length();
             if (count != 0) {
                 for (int j = 0; j < count; j++) {
                     builder.append(" ");
                 }
-            }
+            }*/
 
             builder.append(s);
 
@@ -62,12 +62,13 @@ arr2	[27 ,56, 19, 14, 14, 10]
 */
 
 /*
-테스트 1 〉	통과 (0.92ms, 70.2MB)
-테스트 2 〉	통과 (1.30ms, 56.8MB)
-테스트 3 〉	통과 (0.19ms, 69.1MB)
-테스트 4 〉	통과 (0.93ms, 74.5MB)
-테스트 5 〉	통과 (0.42ms, 62.2MB)
-테스트 6 〉	통과 (0.98ms, 56.7MB)
-테스트 7 〉	통과 (0.33ms, 59.7MB)
-테스트 8 〉	통과 (0.29ms, 73.3MB)
+테스트 1 〉	통과 (9.61ms, 59.7MB)
+테스트 2 〉	통과 (12.61ms, 76.3MB)
+테스트 3 〉	통과 (6.73ms, 76.2MB)
+테스트 4 〉	통과 (8.78ms, 69.2MB)
+테스트 5 〉	통과 (10.58ms, 76.1MB)
+테스트 6 〉	통과 (8.16ms, 58.6MB)
+테스트 7 〉	통과 (7.34ms, 71.6MB)
+테스트 8 〉	통과 (8.49ms, 59MB)
+=> String.format을 사용하니 속도가 엄청 느려진다....
 */
