@@ -25,13 +25,10 @@ public class Solution210902_2 {
         }
 
         List<Map.Entry<Integer, Double>> list = new LinkedList<>(map.entrySet());
-        list.sort(new Comparator<Map.Entry<Integer, Double>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Double> o1, Map.Entry<Integer, Double> o2) {
-                if (o1.getValue() > o2.getValue()) return -1;
-                else if (o1.getValue() < o2.getValue()) return 1;
-                return 0;
-            }
+        list.sort((o1, o2) -> {
+            if (o1.getValue() > o2.getValue()) return -1;
+            else if (o1.getValue() < o2.getValue()) return 1;
+            return 0;
         });
 
         int m = 0;
@@ -94,31 +91,31 @@ N	stages	result
 */
 
 /*
-테스트 1 〉	통과 (0.81ms, 62MB)
-테스트 2 〉	통과 (0.78ms, 58.8MB)
-테스트 3 〉	통과 (30.63ms, 61.6MB)
-테스트 4 〉	통과 (133.89ms, 82.4MB)
-테스트 5 〉	통과 (439.28ms, 83.3MB)
-테스트 6 〉	통과 (3.04ms, 74.9MB)
-테스트 7 〉	통과 (17.84ms, 71.8MB)
-테스트 8 〉	통과 (115.76ms, 81.1MB)
-테스트 9 〉	통과 (483.05ms, 83.6MB)
-테스트 10 〉	통과 (51.53ms, 77.1MB)
-테스트 11 〉	통과 (103.82ms, 82MB)
-테스트 12 〉	통과 (61.68ms, 65.4MB)
-테스트 13 〉	통과 (129.61ms, 65.1MB)
-테스트 14 〉	통과 (0.74ms, 73.8MB)
-테스트 15 〉	통과 (9.47ms, 62.2MB)
-테스트 16 〉	통과 (7.43ms, 74.5MB)
-테스트 17 〉	통과 (9.51ms, 61MB)
-테스트 18 〉	통과 (6.33ms, 72.8MB)
-테스트 19 〉	통과 (4.93ms, 68.9MB)
-테스트 20 〉	통과 (10.80ms, 60.2MB)
-테스트 21 〉	통과 (13.21ms, 61.8MB)
-테스트 22 〉	통과 (279.67ms, 88.4MB)
-테스트 23 〉	통과 (13.31ms, 80.8MB)
-테스트 24 〉	통과 (39.33ms, 79MB)
-테스트 25 〉	통과 (0.68ms, 68.3MB)
-테스트 26 〉	통과 (0.70ms, 69.1MB)
-테스트 27 〉	통과 (0.52ms, 58.9MB)
+테스트 1 〉	통과 (0.75ms, 71.9MB)
+테스트 2 〉	통과 (0.98ms, 76.2MB)
+테스트 3 〉	통과 (24.13ms, 71.8MB)
+테스트 4 〉	통과 (126.89ms, 81.6MB)
+테스트 5 〉	통과 (370.14ms, 70.5MB)
+테스트 6 〉	통과 (3.21ms, 60MB)
+테스트 7 〉	통과 (8.92ms, 60.5MB)
+테스트 8 〉	통과 (101.56ms, 62.4MB)
+테스트 9 〉	통과 (486.53ms, 71.4MB)
+테스트 10 〉	통과 (45.36ms, 77.8MB)
+테스트 11 〉	통과 (108.38ms, 81.9MB)
+테스트 12 〉	통과 (59.92ms, 83.5MB)
+테스트 13 〉	통과 (136.17ms, 65.4MB)
+테스트 14 〉	통과 (0.90ms, 57.4MB)
+테스트 15 〉	통과 (13.57ms, 77.7MB)
+테스트 16 〉	통과 (7.33ms, 60.6MB)
+테스트 17 〉	통과 (8.90ms, 62MB)
+테스트 18 〉	통과 (6.48ms, 76.4MB)
+테스트 19 〉	통과 (2.82ms, 60.8MB)
+테스트 20 〉	통과 (7.66ms, 75.8MB)
+테스트 21 〉	통과 (15.34ms, 77.9MB)
+테스트 22 〉	통과 (276.40ms, 87.1MB)
+테스트 23 〉	통과 (12.29ms, 65.9MB)
+테스트 24 〉	통과 (32.82ms, 68.9MB)
+테스트 25 〉	통과 (0.68ms, 62MB)
+테스트 26 〉	통과 (0.82ms, 58.3MB)
+테스트 27 〉	통과 (0.67ms, 70.2MB)
 */
