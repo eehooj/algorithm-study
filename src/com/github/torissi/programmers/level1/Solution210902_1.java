@@ -1,6 +1,6 @@
 package com.github.torissi.programmers.level1;
 
-public class Solution210902_3 {
+public class Solution210902_1 {
 
     public int solution(int left, int right) {
         int answer = 0;
