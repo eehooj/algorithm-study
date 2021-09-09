@@ -1,4 +1,4 @@
-package com.github.torissi.programmers.level1;
+package com.github.torissi.programmers.level2;
 
 public class Solution210908_2 {
 
