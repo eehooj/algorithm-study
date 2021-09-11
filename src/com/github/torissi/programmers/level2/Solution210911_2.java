@@ -1,17 +1,15 @@
 package com.github.torissi.programmers.level2;
 
-import java.util.StringTokenizer;
-
 public class Solution210911_2 {
 
     public String solution(String s) {
-        StringTokenizer token = new StringTokenizer(s);
+        String[] a = s.split(" ");
 
         int max = -2147483648;
         int min = 2147483647;
 
-        while (token.hasMoreTokens()) {
-            int temp = Integer.parseInt(token.nextToken());
+        for (String token : a) {
+            int temp = Integer.parseInt(token);
 
             if (temp > max) {
                 max = temp;
@@ -44,16 +42,16 @@ s	return
 */
 
 /*
-테스트 1 〉	통과 (8.87ms, 67.8MB)
-테스트 2 〉	통과 (10.56ms, 74.1MB)
-테스트 3 〉	통과 (10.63ms, 73.1MB)
-테스트 4 〉	통과 (12.84ms, 76.8MB)
-테스트 5 〉	통과 (8.39ms, 59MB)
-테스트 6 〉	통과 (10.31ms, 74MB)
-테스트 7 〉	통과 (10.32ms, 71.2MB)
-테스트 8 〉	통과 (10.05ms, 59.2MB)
-테스트 9 〉	통과 (8.39ms, 58.1MB)
-테스트 10 〉	통과 (13.25ms, 72.5MB)
-테스트 11 〉	통과 (10.00ms, 74.2MB)
-테스트 12 〉	통과 (10.37ms, 70.1MB)
+테스트 1 〉	통과 (8.35ms, 73MB)
+테스트 2 〉	통과 (8.56ms, 73.3MB)
+테스트 3 〉	통과 (8.59ms, 73.9MB)
+테스트 4 〉	통과 (9.58ms, 74.4MB)
+테스트 5 〉	통과 (11.51ms, 71.4MB)
+테스트 6 〉	통과 (11.07ms, 78.2MB)
+테스트 7 〉	통과 (8.88ms, 72.2MB)
+테스트 8 〉	통과 (9.44ms, 71.9MB)
+테스트 9 〉	통과 (8.90ms, 72.2MB)
+테스트 10 〉	통과 (8.31ms, 69.9MB)
+테스트 11 〉	통과 (8.63ms, 71.5MB)
+테스트 12 〉	통과 (9.26ms, 75.2MB)
 */
