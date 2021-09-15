@@ -5,15 +5,11 @@ import java.util.Stack;
 public class Solution210915_2 {
 
     boolean solution(String s) {
-        String[] str = s.split("");
-        int length = str.length;
-        if (str[0].equals(")") || str[length - 1].equals("(")) {
-            return false;
-        }
+        char[] cha = s.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        Stack<String> stack = new Stack<>();
-        for (String a : str) {
-            if (a.equals("(")) {
+        for (char a : cha) {
+            if (a == '(') {
                 stack.push(a);
             } else {
                 if (!stack.empty()) {
@@ -56,25 +52,25 @@ s	answer
 
 /*
 정확성  테스트
-테스트 1 〉	통과 (0.12ms, 72.2MB)
-테스트 2 〉	통과 (0.12ms, 68.2MB)
-테스트 3 〉	통과 (0.11ms, 69.6MB)
-테스트 4 〉	통과 (0.13ms, 59.2MB)
-테스트 5 〉	통과 (0.21ms, 58.5MB)
-테스트 6 〉	통과 (0.13ms, 59.1MB)
-테스트 7 〉	통과 (0.23ms, 71.7MB)
-테스트 8 〉	통과 (0.22ms, 71.6MB)
-테스트 9 〉	통과 (0.30ms, 69MB)
-테스트 10 〉	통과 (0.40ms, 61.9MB)
-테스트 11 〉	통과 (0.23ms, 71.1MB)
-테스트 12 〉	통과 (0.41ms, 61.4MB)
-테스트 13 〉	통과 (0.47ms, 72.6MB)
-테스트 14 〉	통과 (0.43ms, 68MB)
-테스트 15 〉	통과 (0.41ms, 60.2MB)
-테스트 16 〉	통과 (0.44ms, 68.8MB)
-테스트 17 〉	통과 (0.41ms, 68.9MB)
-테스트 18 〉	통과 (0.30ms, 68.6MB)
+테스트 1 〉	통과 (0.15ms, 71.2MB)
+테스트 2 〉	통과 (0.16ms, 69.8MB)
+테스트 3 〉	통과 (0.11ms, 71MB)
+테스트 4 〉	통과 (0.26ms, 71MB)
+테스트 5 〉	통과 (0.20ms, 72MB)
+테스트 6 〉	통과 (0.11ms, 57.9MB)
+테스트 7 〉	통과 (0.20ms, 72.7MB)
+테스트 8 〉	통과 (0.18ms, 59.4MB)
+테스트 9 〉	통과 (0.20ms, 72.3MB)
+테스트 10 〉	통과 (0.18ms, 60.1MB)
+테스트 11 〉	통과 (0.20ms, 68.4MB)
+테스트 12 〉	통과 (0.23ms, 72MB)
+테스트 13 〉	통과 (0.27ms, 61.4MB)
+테스트 14 〉	통과 (0.22ms, 72.9MB)
+테스트 15 〉	통과 (0.25ms, 69.3MB)
+테스트 16 〉	통과 (0.24ms, 70.1MB)
+테스트 17 〉	통과 (0.24ms, 70.7MB)
+테스트 18 〉	통과 (0.25ms, 72.4MB)
 효율성  테스트
-테스트 1 〉	실패 (시간 초과)
-테스트 2 〉	실패 (시간 초과)
+테스트 1 〉	통과 (16.90ms, 53.8MB)
+테스트 2 〉	통과 (15.88ms, 53.2MB)
 */
