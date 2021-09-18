@@ -1,19 +1,26 @@
 package com.github.torissi.programmers.level2;
 
+import java.util.Stack;
+
 public class Solution210918_2 {
 
     public static int[] solution(int[] prices) {
         int length = prices.length;
         int[] answer = new int[length];
+        Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < length; i++) {
-            for (int j = i + 1; j < length ; j++) {
-                answer[i]++;
-
-                if (prices[i] > prices[j]) {
-                    break;
-                }
+            while (!stack.isEmpty() && prices[i] < prices[stack.peek()]) {
+                int temp = stack.pop();
+                answer[temp] = i - temp;
             }
+
+            stack.push(i);
+        }
+
+        while (!stack.isEmpty()) {
+            int temp = stack.pop();
+            answer[temp] = (length - 1) - temp;
         }
 
         return answer;
@@ -46,20 +53,21 @@ prices	return
 
 /*
 정확성  테스트
-테스트 1 〉	통과 (0.01ms, 58.3MB)
-테스트 2 〉	통과 (0.03ms, 72.8MB)
-테스트 3 〉	통과 (0.13ms, 72.2MB)
-테스트 4 〉	통과 (0.15ms, 71.6MB)
-테스트 5 〉	통과 (0.30ms, 72.8MB)
-테스트 6 〉	통과 (0.03ms, 71.6MB)
-테스트 7 〉	통과 (0.15ms, 74.3MB)
-테스트 8 〉	통과 (0.10ms, 70.7MB)
-테스트 9 〉	통과 (0.02ms, 60.2MB)
-테스트 10 〉	통과 (0.17ms, 60.3MB)
+테스트 1 〉	통과 (0.10ms, 72.2MB)
+테스트 2 〉	통과 (0.38ms, 69.5MB)
+테스트 3 〉	통과 (1.24ms, 71.6MB)
+테스트 4 〉	통과 (1.31ms, 73.8MB)
+테스트 5 〉	통과 (1.10ms, 70.8MB)
+테스트 6 〉	통과 (0.23ms, 70.5MB)
+테스트 7 〉	통과 (0.84ms, 58.1MB)
+테스트 8 〉	통과 (1.19ms, 71.8MB)
+테스트 9 〉	통과 (0.20ms, 61.4MB)
+테스트 10 〉	통과 (1.07ms, 59.5MB)
 효율성  테스트
-테스트 1 〉	통과 (19.62ms, 71.6MB)
-테스트 2 〉	통과 (10.14ms, 64.7MB)
-테스트 3 〉	통과 (19.21ms, 70.9MB)
-테스트 4 〉	통과 (14.30ms, 68.4MB)
-테스트 5 〉	통과 (12.92ms, 67.9MB)
+테스트 1 〉	통과 (33.12ms, 73.6MB)
+테스트 2 〉	통과 (24.05ms, 68.5MB)
+테스트 3 〉	통과 (58.33ms, 73.9MB)
+테스트 4 〉	통과 (34.87ms, 69.2MB)
+테스트 5 〉	통과 (22.44ms, 66.1MB)
+=> 스택이 더 느림
 */
