@@ -8,13 +8,10 @@ public class Solution210918_2 {
 
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length ; j++) {
-                if (prices[i] > prices[j]) {
-                    answer[i] = j - i;
-                    break;
-                }
+                answer[i]++;
 
-                if (j == length - 1) {
-                    answer[i] = j - i;
+                if (prices[i] > prices[j]) {
+                    break;
                 }
             }
         }
