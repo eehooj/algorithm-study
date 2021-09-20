@@ -45,6 +45,8 @@ citations	return
 ※ 공지 - 2019년 2월 28일 테스트 케이스가 추가되었습니다.
 
 https://en.wikipedia.org/wiki/H-index "위키백과" ↩
+
+=> 문제 이해 참고 https://yabmoons.tistory.com/694
 */
 
 /*
