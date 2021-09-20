@@ -2,29 +2,24 @@ package com.github.torissi.programmers.level2;
 
 public class Solution210920_2 {
 
-    public int[] solution(int brown, int yellow) {
+    public static int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
-        int sum = brown + yellow;
 
-        for (int i = 1; i <= sum; i++) {
-            int col = sum / i; // 가로
+        int a = (brown + 4) / 2; // 가로 + 세로 길이
+        int b = brown + yellow; // 주어진 타일의 총 개수
 
-            if (i > col) {
-                continue;
-            }
-
-            if ((i - 2) * (col - 2) == yellow) {
-                answer[0] = col;
-                answer[1] = i;
-                break;
-            }
-        }
+        double sqrt = Math.sqrt((a * a) - (4 * b)); // (a * a) => a를 한 변으로 하는 정사각형 생성
+                                                    // - (4 * b) => 네 개의 테두리를 잘라냄
+                                                    // 루트를 사용하여 정사각형의 한 변의 길이를 구함
+                                                    // => 구해야 하는 카펫의 가로 - 세로 차
+        answer[0] = (int) (a + sqrt) / 2; // 가로가 더 길니까 +
+        answer[1] = (int) (a - sqrt) / 2;
 
         return answer;
     }
 
     public static void main(String[] args) {
-
+        solution(10, 2);
     }
 }
 
