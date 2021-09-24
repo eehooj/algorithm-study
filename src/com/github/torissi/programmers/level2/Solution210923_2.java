@@ -4,13 +4,14 @@ package com.github.torissi.programmers.level2;
 import java.util.ArrayList;
 
 public class Solution210923_2 {
-    static int answer = 0;
     static boolean []check = new boolean[7];
     static ArrayList<Integer> arr = new ArrayList<>();
 
     public static int solution(String numbers) {
+        int answer = 0;
+
         for (int i = 0; i < numbers.length(); i++) {
-            dfs(numbers, "", i + 1);
+            permutation(numbers, "", i + 1);
         }
 
         for (Integer integer : arr) {
@@ -22,7 +23,7 @@ public class Solution210923_2 {
         return answer;
     }
 
-    private static void dfs(String numbers, String s, int i) {
+    private static void permutation(String numbers, String s, int i) {
         if (s.length() == i) {
             int num = Integer.parseInt(s);
 
@@ -34,7 +35,7 @@ public class Solution210923_2 {
                 if (!check[j]) {
                     check[j] = true;
                     s += numbers.charAt(j);
-                    dfs(numbers, s, i);
+                    permutation(numbers, s, i);
                     check[j] = false;
                     s = s.substring(0, s.length() - 1);
                 }
@@ -47,7 +48,7 @@ public class Solution210923_2 {
             return false;
         }
 
-        for (int i = 2; i <= Math.sqrt(num); i++) {
+        for (int i = 2; i <= Math.sqrt(num); i++) { //에라토스테네스의 체 소수 판별법 => 제곱근까지만 약수 여부 검증
             if (num % i == 0) {
                 return false;
             }
@@ -57,7 +58,7 @@ public class Solution210923_2 {
     }
 
     public static void main(String[] args) {
-        solution("011");
+        solution("17");
     }
 }
 
@@ -100,3 +101,9 @@ numbers	return
 테스트 11 〉	통과 (18.70ms, 81.2MB)
 테스트 12 〉	통과 (15.65ms, 83MB)
 */
+
+
+/* 백트래킹 순열이란
+* 재귀함수 특징을 이용하여 가능한 모든 경우의 수를 다 탐색하는 순열
+* == 완전탐색(dfs)
+* */
