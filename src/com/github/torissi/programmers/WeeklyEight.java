@@ -1,30 +1,16 @@
 package com.github.torissi.programmers;
 
-import java.util.HashMap;
-import java.util.Set;
-
 public class WeeklyEight {
     public int solution(int[][] sizes) {
         int max = 0;
         int min = 0;
 
         for (int[] size : sizes) {
-            int big = size[0];
-            int small = size[1];
+            int tempMax = Math.max(size[0], size[1]);
+            int tempMin = Math.min(size[0], size[1]);
 
-            if (big < small) {
-                int temp = big;
-                big = small;
-                small = temp;
-            }
-
-            if (max < big) {
-                max = big;
-            }
-
-            if (min < small) {
-                min = small;
-            }
+            max = Math.max(tempMax, max);
+            min = Math.max(tempMin, min);
         }
 
         return max * min;
@@ -69,24 +55,25 @@ sizes	result
 */
 
 /*
-테스트 1 〉	통과 (0.02ms, 73.9MB)
-테스트 2 〉	통과 (0.02ms, 81.3MB)
-테스트 3 〉	통과 (0.02ms, 74.5MB)
-테스트 4 〉	통과 (0.02ms, 77.8MB)
-테스트 5 〉	통과 (0.01ms, 77MB)
-테스트 6 〉	통과 (0.01ms, 72.7MB)
-테스트 7 〉	통과 (0.02ms, 72.8MB)
-테스트 8 〉	통과 (0.02ms, 73.4MB)
-테스트 9 〉	통과 (0.03ms, 78.3MB)
-테스트 10 〉	통과 (0.02ms, 77.3MB)
-테스트 11 〉	통과 (0.04ms, 87.9MB)
-테스트 12 〉	통과 (0.05ms, 85.2MB)
-테스트 13 〉	통과 (0.09ms, 77.6MB)
-테스트 14 〉	통과 (0.14ms, 77.1MB)
-테스트 15 〉	통과 (0.33ms, 79.2MB)
-테스트 16 〉	통과 (0.68ms, 79.3MB)
-테스트 17 〉	통과 (0.71ms, 88.1MB)
-테스트 18 〉	통과 (0.99ms, 84.8MB)
-테스트 19 〉	통과 (0.97ms, 86.5MB)
-테스트 20 〉	통과 (1.12ms, 85.7MB)
+테스트 1 〉	통과 (0.02ms, 75.2MB)
+테스트 2 〉	통과 (0.04ms, 75.4MB)
+테스트 3 〉	통과 (0.02ms, 75.1MB)
+테스트 4 〉	통과 (0.02ms, 73.7MB)
+테스트 5 〉	통과 (0.05ms, 76.4MB)
+테스트 6 〉	통과 (0.02ms, 78.8MB)
+테스트 7 〉	통과 (0.05ms, 72.1MB)
+테스트 8 〉	통과 (0.03ms, 74MB)
+테스트 9 〉	통과 (0.04ms, 73MB)
+테스트 10 〉	통과 (0.04ms, 74.8MB)
+테스트 11 〉	통과 (0.07ms, 73.5MB)
+테스트 12 〉	통과 (0.07ms, 76.7MB)
+테스트 13 〉	통과 (0.20ms, 71.4MB)
+테스트 14 〉	통과 (0.36ms, 82.2MB)
+테스트 15 〉	통과 (0.63ms, 69.4MB)
+테스트 16 〉	통과 (0.93ms, 88.1MB)
+테스트 17 〉	통과 (0.96ms, 86.3MB)
+테스트 18 〉	통과 (1.10ms, 85.5MB)
+테스트 19 〉	통과 (1.94ms, 87.7MB)
+테스트 20 〉	통과 (2.11ms, 84MB)
+=> 크기 비교를 직접 하지 않고 Math클래스를 쓰니 시간이 아주 조금 더 걸린다
 */
