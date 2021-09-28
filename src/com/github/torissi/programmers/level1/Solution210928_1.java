@@ -1,24 +1,11 @@
 package com.github.torissi.programmers.level1;
 
-import java.util.HashSet;
+import java.util.Arrays;
 
 public class Solution210928_1 {
 
     public int solution(int[] numbers) {
-        int answer = 0;
-        HashSet<Integer> hashSet = new HashSet<>();
-
-        for (int a : numbers) {
-            hashSet.add(a);
-        }
-
-        for (int i = 0; i < 10; i++) {
-            if (!hashSet.contains(i)) {
-                answer += i;
-            }
-        }
-
-        return answer;
+        return 45 - Arrays.stream(numbers).sum();
     }
 
     public static void main(String[] args) {
@@ -47,13 +34,14 @@ numbers	result
 */
 
 /*
-테스트 1 〉	통과 (0.05ms, 84MB)
-테스트 2 〉	통과 (0.09ms, 68.2MB)
-테스트 3 〉	통과 (0.07ms, 65.9MB)
-테스트 4 〉	통과 (0.06ms, 74.4MB)
-테스트 5 〉	통과 (0.07ms, 73.3MB)
-테스트 6 〉	통과 (0.04ms, 82.9MB)
-테스트 7 〉	통과 (0.08ms, 73.1MB)
-테스트 8 〉	통과 (0.07ms, 83.6MB)
-테스트 9 〉	통과 (0.06ms, 79MB)
+테스트 1 〉	통과 (0.76ms, 75.8MB)
+테스트 2 〉	통과 (2.38ms, 72.5MB)
+테스트 3 〉	통과 (228.07ms, 92.1MB)
+테스트 4 〉	통과 (1.38ms, 71.6MB)
+테스트 5 〉	통과 (1.13ms, 75.3MB)
+테스트 6 〉	통과 (0.82ms, 70.5MB)
+테스트 7 〉	통과 (0.84ms, 66.6MB)
+테스트 8 〉	통과 (0.98ms, 73.1MB)
+테스트 9 〉	통과 (0.95ms, 77.4MB)
+=> 역시 스트림 가독성은 좋지만 조금 더 오래 걸림
 */
