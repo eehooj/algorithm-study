@@ -9,13 +9,13 @@ public class FindCharacter {
 
         char[] str = scanner.next().toCharArray();
 
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
         for (char a : str) {
             if (Character.isUpperCase(a)) {
-                answer += Character.toLowerCase(a);
+                answer.append(Character.toLowerCase(a));
             } else {
-                answer += Character.toUpperCase(a);
+                answer.append(Character.toUpperCase(a));
             }
         }
 
@@ -28,7 +28,7 @@ public class FindCharacter {
 * 2. 대문자는 소문자로, 소문자는 대문자로 변환
 * */
 
-/*
+/* +=
 *ID	결과	Memory	Time
 1
 정답입니다
@@ -50,4 +50,28 @@ public class FindCharacter {
 정답입니다
 27MB
 113ms
+* */
+
+/* StringBuilder
+ *ID	결과	Memory	Time
+1
+정답입니다
+27MB
+136ms
+2
+정답입니다
+27MB
+143ms
+3
+정답입니다
+27MB
+156ms
+4
+정답입니다
+27MB
+145ms
+5
+정답입니다
+27MB
+127ms
 * */
