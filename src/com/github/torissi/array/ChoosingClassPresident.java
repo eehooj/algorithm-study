@@ -1,6 +1,8 @@
 package com.github.torissi.array;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ChoosingClassPresident {
 
@@ -16,7 +18,28 @@ public class ChoosingClassPresident {
             }
         }
 
+        int max = 0;
 
+        for (int i = 0; i < num; i++) { // 학생
+            Set<Integer> set = new HashSet<>();
+
+            for (int j = 0; j < num; j++) { // 학생
+                for (int k = 0; k < 5; k++) { // 열
+                    if (arr[i][k] == arr[j][k]) {
+                        set.add(j);
+                    }
+                }
+            }
+
+            int size = set.size();
+
+            if (size > max) {
+                max = size;
+                answer = i;
+            }
+        }
+
+        System.out.println(answer + 1);
     }
 }
 
