@@ -66,7 +66,20 @@
 > DP(Dynamic Programming) 동적 계획법
 > - 프로그래머스 정수 삼각형(level3) - 
 >   ```java
+>   public class WeeklyThree_4 {
+>       // Bottom-up
+>       public static int solution(int[][] triangle) {
+>           int rLength = triangle.length - 2;
 >   
+>           for (int i = rLength; i >= 0; i--) {
+>               for (int j = 0; j < triangle[i].length; j++) {
+>                   triangle[i][j] += Math.max(triangle[i + 1][j], triangle[i + 1][j + 1]);
+>               }
+>           }
+>   
+>           return triangle[0][0];
+>       }
+>   }
 >   ```
 > - 처음 진행하는 연산은 기록하고, 이미 진행한 연산은 기록되어 있는 값을 가져와 사용 (Memoization)
 > - ex) 피보나치 수열
