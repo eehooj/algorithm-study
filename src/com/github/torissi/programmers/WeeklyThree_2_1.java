@@ -61,7 +61,7 @@ public class WeeklyThree_2_1 {
 
                 count[moved.y][moved.x] = currentCount + 1;
                 visited[moved.y][moved.x] = true;
-                queue.offer(moved);
+                queue.offer(moved); // 모든 가능한 수를 큐에 담고 탐색
             }
         }
 
