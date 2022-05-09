@@ -13,7 +13,7 @@ public class WeeklyThree_1 {
         }
 
         for (Integer item : map.values()) {
-            answer *= (item + 1);
+            answer *= (item + 1); // + 1은 사용하지 않았을 경우의 수
         }
 
         return answer;
