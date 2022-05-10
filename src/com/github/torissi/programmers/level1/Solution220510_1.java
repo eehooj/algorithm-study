@@ -17,6 +17,7 @@ public class Solution220510_1 {
 
         for (String item : report) {
             String[] temp = item.split(" ");
+
             bad.get(temp[1]).add(temp[0]);
             user.get(temp[0]).add(temp[1]);
         }
