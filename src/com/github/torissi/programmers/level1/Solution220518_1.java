@@ -10,7 +10,7 @@ public class Solution220518_1 {
     public static int[] solution(int N, int[] stages) {
         int[] answer = new int[N];
         int players = stages.length; // 플레이어 수
-        int[] currentStage = new int[N + 1];
+        int[] currentStage = new int[N + 1]; // 현재 스테이지에 머물러 있는 사람 수 넣을 배열
         Map<Integer, Double> map = new HashMap<>(); // <번호, 실패율>
 
         for (int item : stages) { // 현재 머물러 있는 스테이지 배열에 ++
