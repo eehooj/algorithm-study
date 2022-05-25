@@ -52,3 +52,27 @@ public class FindingAllAnagrams {
 * 2. T문자열 입력
 * 3. S문자열에서 T문자열 아나그램이 되는 부분 문자열의 개수 구하기기
 * */
+
+/*
+ID	결과	Memory	Time
+1
+정답입니다
+27MB
+154ms
+2
+정답입니다
+27MB
+149ms
+3
+정답입니다
+27MB
+141ms
+4
+정답입니다
+27MB
+134ms
+5
+정답입니다
+28MB
+181ms
+*/
