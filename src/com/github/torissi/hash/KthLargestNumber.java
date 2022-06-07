@@ -2,38 +2,36 @@ package com.github.torissi.hash;
 
 import java.util.*;
 
-public class kthLargestNumber {
+public class KthLargestNumber {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int k = scanner.nextInt();
-        List<Integer> list = new ArrayList<>();
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
-            list.add(scanner.nextInt());
+            arr[i] = scanner.nextInt();
         }
 
-        list.sort(Collections.reverseOrder());
-
-        int max = list.get(0) + list.get(1) + list.get(2);
         int answer = -1;
+        TreeSet<Integer> tSet = new TreeSet<>(Collections.reverseOrder());
 
-        if (n != 3) {
-            int count = 0;
-
-            for (int i = 3; i < n; i++) {
-                count++;
-
-                if (count == k) {
-                    answer = max;
-
-                    break;
-                } else if (count > k) {
-                    break;
-                }else {
-                    max = max - list.get(i - 1) + list.get(i);
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for(int l=j+1; l<n; l++){
+                    tSet.add(arr[i]+arr[j]+arr[l]);
                 }
+            }
+        }
+
+        int cnt=0;
+
+        for(int x : tSet){
+            cnt++;
+
+            if(cnt==k) {
+                answer = x;
             }
         }
 
