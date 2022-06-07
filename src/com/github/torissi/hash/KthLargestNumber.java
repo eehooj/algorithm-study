@@ -46,3 +46,27 @@ public class KthLargestNumber {
 * 3. 3장을 뽑을 수 있는 모든 경우를 기록
 * 4. 기록 중 K번째로 큰 수를 출력
 * */
+
+/*
+ID	결과	Memory	Time
+1
+정답입니다
+27MB
+162ms
+2
+정답입니다
+27MB
+151ms
+3
+정답입니다
+28MB
+204ms
+4
+정답입니다
+29MB
+240ms
+5
+정답입니다
+29MB
+189ms
+* */

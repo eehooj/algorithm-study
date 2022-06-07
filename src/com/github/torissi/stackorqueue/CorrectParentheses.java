@@ -39,3 +39,27 @@ public class CorrectParentheses {
         System.out.println(solution(cha));
     }
 }
+
+/*
+ID	결과	Memory	Time
+1
+정답입니다
+27MB
+153ms
+2
+정답입니다
+27MB
+168ms
+3
+정답입니다
+27MB
+140ms
+4
+정답입니다
+27MB
+155ms
+5
+정답입니다
+27MB
+107ms
+* */

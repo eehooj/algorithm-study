@@ -30,3 +30,28 @@ public class RemoveParentheses {
     }
 
 }
+
+/*
+* ID	결과	Memory	Time
+1
+정답입니다
+27MB
+158ms
+2
+정답입니다
+27MB
+166ms
+3
+정답입니다
+27MB
+174ms
+4
+정답입니다
+27MB
+200ms
+5
+정답입니다
+27MB
+130ms
+
+* */
