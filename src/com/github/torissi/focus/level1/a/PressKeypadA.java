@@ -1,4 +1,4 @@
-package com.github.torissi.focus;
+package com.github.torissi.focus.level1.a;
 
 public class PressKeypadA {
 
